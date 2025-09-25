@@ -10,7 +10,7 @@ total_count       = 0
 
 json_path="your_json_path"
 
-# 打开 JSON 文件并加载数据
+
 with open(json_path, 'r') as file:
     data = json.load(file)
     for item in data:
@@ -26,7 +26,7 @@ with open(json_path, 'r') as file:
         total_score += score
         total_count += 1
 
-# 打印
+
 print("-----------------------------")
 for t in count_by_task:
     print(f"{t:<30}  {score_sum_by_task[t]/count_by_task[t]:>6.2f}  ({count_by_task[t]} 条)")

@@ -73,16 +73,6 @@ if __name__ == "__main__":
     print("*" * 30)
     print(f"No prediction count: {no_pred_count}")
 
-    # # Print task-wise results:
-    # print("*" * 30)
-    # print("Task-wise Accuracy:")
-    # for task, metrics in task_metrics.items():
-    #     task_corr = metrics['correct']
-    #     task_total = metrics['total']
-    #     task_acc = (task_corr / task_total) * 100 if task_total > 0 else 0
-    #     print(f"{task} : {task_acc:.2f}% over {task_total} samples")
-    # print("*" * 30)
-
     combined_task_name = "人物关系与社交推理类"
     combined_corr = (task_metrics.get("人物身份关联任务", {'correct': 0})['correct'] +
                      task_metrics.get("社交意图推理任务", {'correct': 0})['correct'])
@@ -91,11 +81,11 @@ if __name__ == "__main__":
 
     combined_acc = (combined_corr / combined_total) * 100 if combined_total > 0 else 0
 
-    # Print combined results
+
     print("*" * 30)
     print("Combined Task Accuracy:")
     print(f"{combined_task_name} : {combined_acc:.2f}% over {combined_total} samples")
-    # print("*" * 30)
+
 
     combined_task_name = "场景理解类"
     combined_corr = (task_metrics.get("场景定位任务", {'correct': 0})['correct'] +
@@ -107,11 +97,10 @@ if __name__ == "__main__":
 
     combined_acc = (combined_corr / combined_total) * 100 if combined_total > 0 else 0
 
-    # Print combined results
+
     print("*" * 30)
     print("Combined Task Accuracy:")
     print(f"{combined_task_name} : {combined_acc:.2f}% over {combined_total} samples")
-    # print("*" * 30)
 
     combined_task_name = "时间推理任务"
     combined_corr = (task_metrics.get("时间推理任务", {'correct': 0})['correct'])
@@ -119,11 +108,10 @@ if __name__ == "__main__":
 
     combined_acc = (combined_corr / combined_total) * 100 if combined_total > 0 else 0
 
-    # Print combined results
+
     print("*" * 30)
     print("Combined Task Accuracy:")
     print(f"{combined_task_name} : {combined_acc:.2f}% over {combined_total} samples")
-    # print("*" * 30)
 
     combined_task_name = "事件推理类"
     combined_corr = (task_metrics.get("事件因果推理任务", {'correct': 0})['correct'] +
@@ -133,11 +121,9 @@ if __name__ == "__main__":
 
     combined_acc = (combined_corr / combined_total) * 100 if combined_total > 0 else 0
 
-    # Print combined results
     print("*" * 30)
     print("Combined Task Accuracy:")
     print(f"{combined_task_name} : {combined_acc:.2f}% over {combined_total} samples")
-    # print("*" * 30)
 
     combined_task_name = "异常检测与安全"
     combined_corr = (task_metrics.get("异常检测与安全任务", {'correct': 0})['correct'])
@@ -145,7 +131,6 @@ if __name__ == "__main__":
 
     combined_acc = (combined_corr / combined_total) * 100 if combined_total > 0 else 0
 
-    # Print combined results
     print("*" * 30)
     print("Combined Task Accuracy:")
     print(f"{combined_task_name} : {combined_acc:.2f}% over {combined_total} samples")
